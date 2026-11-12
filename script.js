@@ -154,7 +154,7 @@ const slides = [
     section: "THANK YOU · LET’S KEEP BUILDING",
     layout: "thank-you",
     title: "Thank you.",
-    presenter: "Shamsudeen Aderoju",
+    presenter: "Mr. Shamsudeen Aderoju",
     role: "CEO, Shamzbridge Consult Limited",
     note: "Thank the audience and invite questions or continued conversation."
   }
@@ -230,7 +230,7 @@ function renderSlideBody(slide) {
           <h1 id="slide-title">${slide.title}</h1>
           <p>${escapeHtml(slide.subtitle)}</p>
           <div class="cover-presenter">
-            <strong>Shamsudeen Aderoju</strong>
+            <strong>Mr. Shamsudeen Aderoju</strong>
             <span>CEO, Shamzbridge Consult Limited</span>
           </div>
         </div>
