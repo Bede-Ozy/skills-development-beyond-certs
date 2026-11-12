@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A 13-slide career-centre presentation on developing skills beyond academic qualifications for the ISN Annual Gathering 2026, presented by JCIN Amb. Shamsudeen Aderoju.">
+  <meta name="theme-color" content="#07171e">
+  <title>Skills Beyond the Certificate | ISN Annual Gathering 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="deck" id="deck" aria-label="Presentation">
+    <header class="topbar">
+      <div class="brand" aria-label="Skills Development presentation">
+        <span class="brand-mark">S</span>
+        <span>SKILLS<span class="brand-divider">/</span>DEVELOPMENT</span>
+      </div>
+      <nav class="section-nav" aria-label="Jump to a section">
+        <button class="section-tab overview-tab" type="button" data-start="0" aria-label="Go to the first slide">All <span>13</span></button>
+        <button class="section-tab" type="button" data-start="0" data-end="0">Opening</button>
+        <button class="section-tab" type="button" data-start="1" data-end="2">Foundations</button>
+        <button class="section-tab" type="button" data-start="3" data-end="5">Skills</button>
+        <button class="section-tab" type="button" data-start="6" data-end="8">In practice</button>
+        <button class="section-tab" type="button" data-start="9" data-end="10">Action plan</button>
+        <button class="section-tab" type="button" data-start="11" data-end="12">Closing</button>
+      </nav>
+      <button class="topbar-fullscreen" id="fullscreen-button" type="button" aria-label="Enter fullscreen" title="Fullscreen (F)">⛶</button>
+    </header>
+    <div class="work-area">
+      <section class="stage" aria-label="Presentation canvas">
+        <div class="canvas-viewport" id="canvas-viewport">
+          <div class="canvas-fit" id="canvas-fit">
+            <div class="deck-content" id="slide-content" aria-live="polite"></div>
+          </div>
+        </div>
+        <nav class="controls" aria-label="Slide controls">
+          <button class="control-button" id="prev-button" type="button" aria-label="Previous slide" title="Previous (←)">‹</button>
+          <span class="slide-count" id="slide-count" aria-live="polite"></span>
+          <button class="control-button next-button" id="next-button" type="button" aria-label="Next slide" title="Next (→ or Space)">›</button>
+          <span class="control-divider" aria-hidden="true"></span>
+          <div class="deck-progress" aria-label="Presentation progress"><div class="deck-progress-fill" id="progress-fill"></div></div>
+        </nav>
+      </section>
+    </div>
+    <aside class="speaker-notes" id="speaker-notes" hidden aria-label="Speaker notes">
+      <div class="notes-heading">
+        <strong>Speaker notes</strong>
+        <button id="close-notes" type="button" aria-label="Close speaker notes">×</button>
+      </div>
+      <p id="notes-content"></p>
+    </aside>
+    <div class="sr-only" id="announcer" aria-live="assertive"></div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
