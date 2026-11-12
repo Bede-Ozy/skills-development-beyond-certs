@@ -51,25 +51,25 @@ const slides = [
     section: "SKILLS YOU CAN SHOW",
     layout: "cards",
     title: "Technical skills turn knowledge into useful work.",
-    intro: "Choose tools and methods that fit your field—and practise until you can use them.",
+    intro: "Technical skills are the practical tools, methods and know-how your field relies on.",
     cards: [
-      { number: "01", title: "Digital productivity", text: "Documents, spreadsheets, presentations, online meetings and shared files." },
-      { number: "02", title: "Data confidence", text: "Read a table or chart, check a claim and explain what the numbers suggest." },
-      { number: "03", title: "AI & digital judgement", text: "Use AI to support a task; verify the result and protect private information." },
-      { number: "04", title: "Your field’s toolkit", text: "Build hands-on ability in the software, equipment or methods your work actually uses." }
+      { number: "01", title: "Software & digital tools", text: "Use the apps, platforms and equipment that help you do your role effectively." },
+      { number: "02", title: "Hands-on techniques", text: "Operate tools, materials or machinery safely and accurately." },
+      { number: "03", title: "Digital & AI literacy", text: "Use digital services and AI thoughtfully; check information and protect private data." },
+      { number: "04", title: "Professional methods", text: "Apply the processes and standards your field relies on to deliver quality work." }
     ],
-    note: "Make the technical examples adaptable to different disciplines. Do not frame AI as a substitute for expertise: check facts, protect confidential or personal data, and own the final work."
+    note: "Emphasize that technical skills vary by occupation: they may involve software, equipment, tools, materials, procedures or specialist methods. Invite examples from different professions in the room. AI is one optional tool, not a requirement; when used, check its output and protect private information."
   },
   {
     section: "THE CAREER ADVANTAGE",
     layout: "equation",
     title: "The advantage is in the combination.",
-    intro: "One capability helps you do the work. The other helps your work matter.",
-    left: { label: "TECHNICAL SKILL", title: "Analyse a spreadsheet", text: "Find the pattern. Check the numbers." },
+    intro: "Technical know-how helps you do the task. People skills help your work move forward.",
+    left: { label: "TECHNICAL SKILL", title: "Use your field’s tools", text: "Apply the right method, equipment or software to do the job well." },
     middle: "＋",
-    right: { label: "SOFT SKILL", title: "Explain the insight", text: "Make it clear. Recommend a next step." },
-    result: "Useful work people can act on.",
-    note: "Bring both skill sets together. Knowing a tool is valuable; communicating what it means and collaborating on what happens next makes it more valuable."
+    right: { label: "SOFT SKILL", title: "Share the result clearly", text: "Explain what you did, why it matters and what comes next." },
+    result: "Good work that’s understood and useful.",
+    note: "Use examples from several kinds of work, not only data tasks: a technician follows a safe repair process and updates a customer; a designer uses the right software and explains a design choice; a health worker follows a clinical procedure and communicates clearly with a patient."
   },
   {
     section: "MAKE THE SKILL VISIBLE",
