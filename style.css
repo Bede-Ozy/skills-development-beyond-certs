@@ -485,31 +485,26 @@ body {
 
 .brand {
   display: inline-flex;
-  flex: 0 0 220px;
+  flex: 0 0 330px;
   align-items: center;
-  gap: 11px;
+  gap: 10px;
   color: #dce7eb;
-  font-size: 0.75rem;
+  font-size: 0.68rem;
   font-weight: 800;
-  letter-spacing: 0.12em;
-  text-decoration: none;
-  white-space: nowrap;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
 }
 
 .brand-mark {
-  display: grid;
-  width: 33px;
-  height: 33px;
-  place-items: center;
-  color: #081b22;
-  background: var(--orange);
-  border-radius: 9px;
-  font-family: Manrope, sans-serif;
-  font-size: 1.15rem;
-  letter-spacing: -0.06em;
+  display: block;
+  flex: 0 0 38px;
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+  border-radius: 6px;
 }
 
-.brand-divider { padding: 0 4px; color: var(--orange); }
+.brand-theme { max-width: 260px; color: #dce7eb; }
 
 .section-nav {
   display: flex;
@@ -733,7 +728,7 @@ body {
 :focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; }
 
 @media (max-width: 1100px) {
-  .brand { flex-basis: 175px; font-size: 0.67rem; }
+  .brand { flex-basis: 280px; font-size: 0.62rem; }
   .topbar { gap: 12px; padding-inline: 18px; }
   .section-nav { justify-content: flex-end; gap: 6px; }
   .section-tab { min-height: 36px; padding-inline: 12px; font-size: 0.8rem; }
@@ -795,7 +790,9 @@ body {
   body { min-height: 100svh; overflow-x: hidden; overflow-y: auto; }
   .deck { display: block; width: 100%; height: auto; min-height: 100svh; overflow: visible; }
   .topbar { position: sticky; top: 0; flex-direction: row; align-items: center; gap: 10px; min-height: 100px; padding: 8px 12px; }
-  .brand { flex: 0 0 auto; gap: 7px; }
+  .brand { flex: 0 1 190px; gap: 7px; font-size: 0.55rem; }
+  .brand-mark { flex-basis: 34px; width: 34px; height: 34px; }
+  .brand-theme { max-width: 145px; }
   .section-nav { flex: 1 1 auto; justify-content: flex-start; }
   .topbar-fullscreen { flex: 0 0 36px; width: 36px; height: 36px; }
   .work-area { display: block; min-height: 0; }
