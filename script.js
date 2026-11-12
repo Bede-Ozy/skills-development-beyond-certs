@@ -4,6 +4,10 @@ const slides = [
     layout: "cover",
     title: "Skills Development<br>Beyond Academic<br><span>Qualifications</span>",
     subtitle: "Your certificate matters. Your capability makes it count.",
+    presenter: "Mr. Shamsudeen Aderoju",
+    designation: "Career Center Speaker",
+    role: "Founder/Programs Manager, Shamzbridge Consult Limited",
+    eventDetails: "13 November 2026 | The Lekki Coliseum (TLC), Lagos",
     note: "Open warmly. Ask the room: “Who here has ever learned something important outside a classroom?” Invite a show of hands. Set the promise: practical skills people can start building now."
   },
   {
@@ -155,7 +159,8 @@ const slides = [
     layout: "thank-you",
     title: "Thank you.",
     presenter: "Mr. Shamsudeen Aderoju",
-    role: "CEO, Shamzbridge Consult Limited",
+    designation: "Career Center Speaker",
+    role: "Founder/Programs Manager, Shamzbridge Consult Limited",
     note: "Thank the audience and invite questions or continued conversation."
   }
 ];
@@ -230,8 +235,12 @@ function renderSlideBody(slide) {
           <h1 id="slide-title">${slide.title}</h1>
           <p>${escapeHtml(slide.subtitle)}</p>
           <div class="cover-presenter">
-            <strong>Mr. Shamsudeen Aderoju</strong>
-            <span>CEO, Shamzbridge Consult Limited</span>
+            <strong>${escapeHtml(slide.presenter)}</strong>
+            <span class="presenter-designation">${escapeHtml(slide.designation)}</span>
+            <span>${escapeHtml(slide.role)}</span>
+          </div>
+          <div class="cover-event-details">
+            <span>${escapeHtml(slide.eventDetails)}</span>
           </div>
         </div>
         <div class="cover-art">
@@ -297,6 +306,7 @@ function renderSlideBody(slide) {
           <span class="thank-you-eyebrow">SKILLS DEVELOPMENT · ISN ANNUAL GATHERING 2026</span>
           <h1 id="slide-title">Thank you<span>.</span></h1>
           <p class="thank-you-presenter">${escapeHtml(slide.presenter)}</p>
+          <p class="thank-you-designation">${escapeHtml(slide.designation)}</p>
           <p class="thank-you-role">${escapeHtml(slide.role)}</p>
         </div>
         <div class="thank-you-brand" aria-label="Shamzbridge Consult Limited">
