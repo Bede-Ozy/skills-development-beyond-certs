@@ -319,20 +319,25 @@ function renderSlideBody(slide) {
   }
 }
 
-function showSlide(index) {
-  currentIndex = Math.max(0, Math.min(index, slides.length - 1));
-  const slide = slides[currentIndex];
+function renderSlide(index) {
+  const slide = slides[index];
   const isCover = slide.layout === "cover";
   const isThankYou = slide.layout === "thank-you";
-  slideContent.innerHTML = `<section class="slide ${isCover ? "cover-slide" : ""} ${isThankYou ? "thank-you-slide" : ""}" aria-labelledby="slide-title">
+  return `<section class="slide ${isCover ? "cover-slide" : ""} ${isThankYou ? "thank-you-slide" : ""}" aria-labelledby="slide-title">
     <header class="slide-header">
       <p class="section-label">${escapeHtml(slide.section)}</p>
     </header>
     <div class="slide-main">
       ${isCover || isThankYou ? renderSlideBody(slide) : `<div class="slide-heading"><h1 id="slide-title">${escapeHtml(slide.title)}</h1>${slide.intro ? `<p>${escapeHtml(slide.intro)}</p>` : ""}</div>${renderSlideBody(slide)}`}
     </div>
-    <footer class="slide-footer"><span>SKILLS DEVELOPMENT · ISN ANNUAL GATHERING 2026</span><span>${String(currentIndex + 1).padStart(2, "0")} / ${String(slides.length).padStart(2, "0")}</span></footer>
+    <footer class="slide-footer"><span>SKILLS DEVELOPMENT · ISN ANNUAL GATHERING 2026</span><span>${String(index + 1).padStart(2, "0")} / ${String(slides.length).padStart(2, "0")}</span></footer>
   </section>`;
+}
+
+function showSlide(index) {
+  currentIndex = Math.max(0, Math.min(index, slides.length - 1));
+  const slide = slides[currentIndex];
+  slideContent.innerHTML = renderSlide(currentIndex);
   count.textContent = `${String(currentIndex + 1).padStart(2, "0")} / ${String(slides.length).padStart(2, "0")}`;
   progressFill.style.width = `${((currentIndex + 1) / slides.length) * 100}%`;
   updateSectionTabs();
@@ -341,6 +346,12 @@ function showSlide(index) {
   notesContent.textContent = slide.note;
   announcer.textContent = `Slide ${currentIndex + 1} of ${slides.length}: ${slide.title.replace(/<[^>]*>/g, "")}`;
 }
+
+window.addEventListener("beforeprint", () => {
+  slideContent.innerHTML = slides.map((_, index) => renderSlide(index)).join("");
+});
+
+window.addEventListener("afterprint", () => showSlide(currentIndex));
 
 function toggleNotes(force) {
   const open = typeof force === "boolean" ? force : notesPanel.hidden;

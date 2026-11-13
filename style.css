@@ -757,13 +757,15 @@ body {
 
 @media print {
   @page { size: 13.333in 7.5in; margin: 0; }
-  html, body { width: 13.333in; height: auto; overflow: visible; background: white; }
-  .deck { display: block; width: 13.333in; height: auto; overflow: visible; background: white; }
+  html, body { width: 13.333in; height: auto; min-height: 0; overflow: visible; background: #0b2028 !important; }
+  body, .deck, .slide, .slide * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  .deck { display: block; width: 13.333in; height: auto; min-height: 0; overflow: visible; background: #07171e !important; }
   .topbar, .controls, .speaker-notes { display: none !important; }
-  .work-area, .stage, .canvas-viewport { display: block; width: auto; height: auto; overflow: visible; padding: 0; }
-  .canvas-fit { width: 13.333in !important; height: 7.5in !important; transform: none !important; overflow: hidden; border: 0; border-radius: 0; box-shadow: none; }
-  .deck-content, .slide { width: 100%; height: 100%; }
-  .slide { page-break-after: always; break-after: page; padding: 0.38in 0.65in 0.5in; }
+  .work-area, .stage, .canvas-viewport { display: block; width: 13.333in; height: auto; min-height: 0; overflow: visible; padding: 0; }
+  .canvas-fit { width: 13.333in !important; height: auto !important; min-height: 0; transform: none !important; overflow: visible; border: 0; border-radius: 0; box-shadow: none; }
+  .deck-content { width: 13.333in; height: auto; }
+  .slide { display: flex; width: 13.333in; height: 7.5in; min-height: 0; page-break-after: always; break-after: page; padding: 0.38in 0.65in 0.5in; }
+  .slide:last-child { page-break-after: auto; break-after: auto; }
   .slide-main { padding-block: 0.2in; }
   .slide-heading { margin-bottom: 0.25in; }
   .info-card { min-height: 1.7in; }
@@ -771,7 +773,7 @@ body {
 
 .work-area { grid-template-columns: minmax(0, 1fr); }
 
-.topbar-fullscreen {
+.topbar-fullscreen, .download-button {
   display: grid;
   flex: 0 0 42px;
   width: 42px;
@@ -787,8 +789,20 @@ body {
   transition: color 140ms ease, background 140ms ease, border-color 140ms ease;
 }
 
-.topbar-fullscreen:hover { color: white; background: #203b45; border-color: #47616b; }
-.topbar-fullscreen:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; }
+.download-button {
+  display: inline-flex;
+  flex-basis: auto;
+  width: auto;
+  gap: 7px;
+  padding: 0 12px;
+  color: #a7b9c1;
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.topbar-fullscreen:hover, .download-button:hover { color: white; background: #203b45; border-color: #47616b; }
+.topbar-fullscreen:focus-visible, .download-button:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; }
 
 .slide-count, .deck-progress { opacity: 0.14; transition: opacity 180ms ease; }
 .controls:hover .slide-count, .controls:hover .deck-progress, .controls:focus-within .slide-count, .controls:focus-within .deck-progress { opacity: 1; }
@@ -814,7 +828,8 @@ body {
   .brand-mark { flex-basis: 34px; width: 34px; height: 34px; }
   .brand-theme { max-width: 145px; }
   .section-nav { flex: 1 1 auto; justify-content: flex-start; }
-  .topbar-fullscreen { flex: 0 0 36px; width: 36px; height: 36px; }
+  .topbar-fullscreen, .download-button { flex: 0 0 36px; width: 36px; height: 36px; }
+  .download-button { gap: 2px; padding: 0; font-size: 0.68rem; }
   .work-area { display: block; min-height: 0; }
   .stage { display: block; min-height: 0; padding: 10px 10px 12px; overflow: visible; }
   .canvas-viewport { display: block; min-height: 0; overflow: visible; }
@@ -875,6 +890,5 @@ body {
 }
 
 @media print {
-  .topbar-fullscreen { display: none !important; }
-  .work-area, .stage, .canvas-viewport { display: block; }
+  .topbar-fullscreen, .download-button { display: none !important; }
 }
